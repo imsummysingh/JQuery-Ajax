@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <title>Jquery DOM</title>
+    <style>
+        body{
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f4f4;
+            line-height: 1.5em
+        }
+        header{
+            text-align: center;
+            color: #fff;
+            background: #333;
+            border-bottom: 4px #000 solid;
+            padding: 20px;
+        }
+
+        #container{
+            width: 90%;
+            margin: auto;
+            padding: 10px;
+        }
+
+        .myClass{
+            color:blue;
+            background: magenta;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Jquery DOM Manipulation</h1>
+    </header>
+    <div id="container">
+        <button id="btn1">Button 1</button>
+        <p class="para1">This is a Paragraph and Here i AM</p>
+        <p class="para2">This is annother Paragraph and Here i AM Again</p>
+        <div id="myDiv"></div>
+        <input type="text" id="newItem">
+        <ul id="list">
+            <li>Item1</li>
+            <li>Item2</li>
+            <li>Item3</li>
+            <li>Item4</li>
+            <li>Item5</li>
+        </ul>
+        <a href="http://www.google.com">Google</a>
+        <ul id="users">
+
+        </ul>
+        
+    </div>
+    <script>
+       $(document).ready(function(){
+        //   $('.para1').css('color','red');
+        //$('.para1').css({color:'red',background:'yellow'});
+        //$('.para2').addClass('myClass');
+        //$('.para2').removeClass('myClass');
+
+        // $('#btn1').click(function(){
+        //     $('.para2').addClass('myClass');
+        // });
+
+        //  $('#myDiv').html('<h1>Hello</h1>');
+         //alert($('#myDiv').text());
+         // $('#myDiv').text('Hello');
+        // $('ul').append('<li>Item6</li>')
+        // $('ul').prepend('<li>Item0</li>')
+        // $('.para1').appendTo('.para2')
+        // $('.para1').prependTo('.para2')
+
+        // $('ul').before('<h1>Hello</h1>')
+        // $('ul').after('<h1>World</h1>');
+
+        // $('ul').empty();
+        // $('ul').detach();
+
+        // $('a').attr('target','_blank');
+        //alert($('a').attr('href'))
+
+        // $('a').removeAttr('target');
+            // $('p').wrap('<h1>')
+        // $('p').wrapAll('<h1>')
+
+        $('#newItem').keyup(function(e){
+            var code = e.which; //get the key code
+            if(code==13){
+                e.preventDefault();
+                $('ul').append('<li>'+e.target.value+'</li>');
+            }
+        });
+
+        // var array = ['summy','sunny','ranjeet'];
+        // $.each(array,function(i,val){
+        //     //console.log(val)
+        //     $('#users').append('<li>'+val+'</li>')
+        // })
+
+        // var newArray = $('ul#list').toArray();
+        // $.each(newArray,function(i,val){
+        //     $('#users').append('<li>'+val+'</li>');
+        // })
+
+       });
+
+    </script>
+</body>
+</html>

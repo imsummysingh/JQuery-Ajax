@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <title>Jquery Selectors</title>
+    <style>
+        body{
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f4f4;
+            line-height: 1.5em
+        }
+        header{
+            text-align: center;
+            color: #fff;
+            background: #333;
+            border-bottom: 4px #000 solid;
+            padding: 20px;
+        }
+
+        #container{
+            width: 90%;
+            margin: auto;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Jquery Selectors</h1>
+    </header>
+    <div id="container">
+
+        <h1 id="h1">Heading One</h1>
+        <p id="para1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus numquam nam architecto, 
+            laboriosam quibusdam pariatur. Possimus error asperiores <span> eligendi blanditiis necessitatibus assumenda, 
+            atque</span> dicta fugit, aperiam molestias porro et consectetur?</p>
+        
+        <h1 class="h2">Heading One</h1>
+        <p class="para2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus numquam nam architecto, 
+            laboriosam quibusdam pariatur. Possimus error asperiores <span> eligendi blanditiis necessitatibus assumenda, 
+            atque</span> dicta fugit, aperiam molestias porro et consectetur?</p>
+        
+        <ul id="list">
+            <li>List Item</li>
+            <li>List Item</li>
+            <li>List Item</li>
+            <li>List Item</li>
+            <li>List Item</li>
+            <li>List Item</li>
+            <li>List Item</li>
+            <li>List Item</li>
+            <li>List Item</li>
+            <li>List Item</li>
+        </ul>
+
+        <input type="button" value="btn1">
+        <input type="submit" value="btn2">
+        <input type="text">
+        <a href="www.facebook.com">Facebook</a>
+        <a href="www.google.com">Google</a>
+    
+    </div>
+    <script>
+        //$('h1').hide();
+        //$('h1#h1').hide();
+        // $('h1.h2').hide();
+        //$('.h2').hide();
+        //$('#para1').css('color','red');
+        //$('p span').css('color','blue');
+        $('ul#list li:first').css('color','red');
+        $('ul#list li:last').css('color','green');
+        $('ul#list li:odd').css('color','pink');
+        $('ul#list li:even').css('color','brown');
+        $('ul#list li:nth-child(2n)').css('color','blue');
+        $('ul#list li:nth-child(3n)').css('color','magenta');
+
+        // $(':button').hide(); or  $('input[type="button"]').hide();    //inpput type
+        // $(':submit').hide();
+        // $(':text').hide();
+
+        $('[href]').css('color','red')
+
+        $('a[href="www.facebook.com"]').css('color','magenta')
+
+       //$('*').hide();
+
+
+
+    </script>
+</body>
+</html>
