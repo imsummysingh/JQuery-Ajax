@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Jquery Drop Down List</title>
+    <script>
+            $(document).ready(function(){
+    
+                $('#country').change(function(){
+                    var add = $('#country option:selected').val();
+                    var output = '';
+                    output = '<div id="result"><input type="textbox" value="'+add+'" style="display:inline-block"><button id="btn">&times;</button></div>';
+                    $("#container").html($('#container').html()+output);
+                });
+    
+               $('#container').on('click', '#btn', function(){
+                    this.closest('#result').remove();
+                    //console.log('Hello');
+               });
+                
+    
+            });   
+    </script>
+</head>
+<body>
+    <div>
+        <div id="list" class="div1">
+            <select id="country">
+                <option value="india">India</option>
+                <option value="pakistan">Pakistan</option>
+                <option value="Nepal">Nepal</option>
+            </select>
+        </div>
+        <div id="container"></div>
+    </div>
+
+    
+    
+</body>
+</html>
